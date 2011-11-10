@@ -1,0 +1,64 @@
+html
+{
+    height:100%    
+}
+body
+{
+    background-color:whitesmoke;
+}
+h1
+{
+    color:black;
+    text-align:center;
+}
+h2
+{
+    color: red;
+    text-align: center;
+}
+
+p
+{
+    font-family:"Verdana";
+    font-size:14px;
+}
+
+h1
+{
+    text-align:center;
+    top:20px;
+}
+h3
+{
+    text-align: left;
+    color: blue;
+}
+p
+{
+    text-align:left;
+    margin-left: 20px;
+    position: absolute;
+    color: blue;
+}
+ul
+{
+    list-style-type:none;
+}
+li
+{
+    display:inline;
+}
+.centro
+{
+    position:absolute;
+    left:200px;
+    top:100px;
+    right:200px;
+    width:200px;
+    background-color:red;
+}
+#footer {  
+    width: 100%;  
+    top: 450px;
+    position: relative;  
+}
