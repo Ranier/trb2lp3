@@ -9,13 +9,13 @@
     </head>
 
     <body>
-        <form method="POST" action="../CampeonatoServlet">
+        <form method="POST" action="../CalcInvestimento">
             <label for="Valor">Valor:</label>
             <input type="number" name="Valor"/>
             <label for="Meses">Prestações:</label>
             <input type="number" name="Meses"/>
-            <label for="juros">Taxa de Juros:</label>
-            <input type="number" name="juros"/>
+            <label for="Juros">Taxa de Juros:</label>
+            <input type="number" name="Juros"/>
             <input type=reset value='Cancelar'>  
             <input type="submit" value="Calcular" />
         </form>

@@ -36,7 +36,7 @@ public class CampeonatoServlet extends HttpServlet {
         jog.setGolt1(gol1);
         jog.setGolt2(gol2);
         
-        request.setAttribute("pessoa", jog);      
+        request.setAttribute("tabela", jog);      
     
     }
 

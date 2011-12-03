@@ -4,6 +4,7 @@
  */
 package br.cesjf.lp3;
 
+import br.cesjf.lp3.modelo.CalcInvestimento;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -17,31 +18,26 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ranier
  */
-@WebServlet(name = "JurosCompostos", urlPatterns = {"/JurosCompostos"})
-public class JurosCompostos extends HttpServlet {
+@WebServlet(name = "JurosCompostosServlet", urlPatterns = {"/JurosCompostosServlet"})
+public class JurosCompostoServlet extends HttpServlet {
  
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispacher =  request.getRequestDispatcher("ValorFinal.jsp");
+        RequestDispatcher dispacher = request.getRequestDispatcher("ValorFinal.jsp");
+
+        float valor = Float.parseFloat(request.getParameter("Valor"));
+        float juros = Float.parseFloat(request.getParameter("Juros"));
+        int meses = Integer.parseInt(request.getParameter("Meses"));
         
+        CalcInvestimento Calc = new CalcInvestimento();
+        Calc.setValor(valor);
+        Calc.setJuros(juros);
+        Calc.setMeses(meses);
+        Calc.CalcInvestimento();
+        request.setAttribute("investimento", Calc);     
         
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        try {
-            /* TODO output your page here
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet JurosCompostos</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet JurosCompostos at " + request.getContextPath () + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-             */
-        } finally {            
-            out.close();
-        }
+        dispacher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
